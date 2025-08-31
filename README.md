@@ -103,8 +103,8 @@ Change SOUND to play a sound using paplay
 If you want to pause notifications, try temporarily disabling the Pushover app notification settings on your device, 
 or try pausing them in the settings on pushover.net.
 
-License
-MIT
+# other info 
+MIT License
 
 
 
