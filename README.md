@@ -14,7 +14,7 @@ No unofficial API calls – it only reads your **local VRChat logs** (safe and T
 # Features
 - ToS-safe: no API keys, only local logs
 - Desktop notification via `notify-send`
-- synced with Pushover[https://pushover.net/] service
+- synced with Pushover (https://pushover.net/) service
 - Auto-switches to the latest VRChat log after restart
 - Optional: custom icon or sound
 - Quick installer (`install.sh`) with distro detection (Debian/Ubuntu, Fedora/Bazzite, Arch/Manjaro)
