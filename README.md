@@ -51,6 +51,7 @@ bash ./uninstall.sh
 
 # Basic Configuration
 auth for Pushover (https://pushover.net/)
+
 Open the top of ~/.config/systemd/user/vrc-join-notify.service and edit:
 example: sudo nano ~/.config/systemd/user/vrc-join-notify.service
 then swap PUSHOVER_TOKEN's XXXXX and PUSHOVER_USER's XXXXX
