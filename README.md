@@ -15,18 +15,21 @@ No unofficial API calls – it only reads your **local VRChat logs** (safe and T
 - Optional: custom icon or sound
 - Quick installer (`install.sh`) with distro detection (Debian/Ubuntu, Fedora/Bazzite, Arch/Manjaro)
 
+## Specified behavior
+The popup will still appear when you join the world, so please be patient.
+
 ---
 ## depency
 python 3.13 or higher
 
 ---
 
-# Install (One-liner)
+# Install
 
 ```bash
 git clone https://github.com/yueplush/vrchat-join-notification.git
 cd vrchat-join-notification
-chmod +x installsh
+chmod +x install.sh
 bash ./install.sh
 ```
 
@@ -43,40 +46,49 @@ chmod +x uninsatll.sh
 bash ./uninstall.sh
 ```
 
-# Manual Setup
+# Basic Configuration
+auth for Pushover (https://pushover.net/)
+Open the top of ~/.config/systemd/user/vrc-join-notify.service and edit:
+example: sudo nano ~/.config/systemd/user/vrc-join-notify.service
+then swap PUSHOVER_TOKEN's XXXXX and PUSHOVER_USER's XXXXX
 
-## Install dependency
-Ubuntu/Debian: sudo apt install libnotify-bin
-Fedora/Bazzite: sudo dnf install libnotify
-Arch/Manjaro: sudo pacman -S libnotify
+```bash  
+[Unit]
+Description=VRChat Join Notifier (user)
+After=default.target
 
-## Place script
-mkdir -p ~/.local/bin
-cp vrc_join_notify.py ~/.local/bin/
-chmod +x ~/.local/bin/vrc_join_notify.py
+[Service]
+Type=simple
+Environment=PUSHOVER_TOKEN=XXXXX   # Application/API Token
+Environment=PUSHOVER_USER=XXXXX   # User Key
+ExecStart=%h/.local/bin/vrc_join_notify.py 
+Restart=always
+RestartSec=2
 
-## Place systemd service
-mkdir -p ~/.config/systemd/user
-cp vrc-join-notify.service ~/.config/systemd/user/
+[Install]
+WantedBy=default.target
+```
+
+token(API key), and user key has just access to https://pushover.net/ create your account (you can also free-trial 30 day)
+if dont wont proprietary here use this without proprietary version.
+https://github.com/yueplush/vrchat-join-notification
+
+after apply setting, then run this command for reset
+
+```bash
 systemctl --user daemon-reload
-systemctl --user enable --now vrc-join-notify.service
-
-Configuration
+systemctl --user restart vrc-join-notify.service
+```
+# if you want change something notification style
 Open the top of vrc_join_notify.py and edit:
 
+```bash
 TITLE = "VRChat"
 ICON = "/path/to/icon.png"   # Optional
 SOUND = "/usr/share/sounds/freedesktop/stereo/message.oga"  # Optional
-
+```
 Change ICON to use a custom PNG in notifications
-Change SOUND to play a sound using paplayDevelopment
-
-Works on Linux + Steam/Proton and Flatpak Steam
-
-Watches log files under:
-~/.local/share/Steam/steamapps/compatdata/438100/.../VRChat/VRChat
-~/.var/app/com.valvesoftware.Steam/.../VRChat/VRChat
-~/.config/unity3d/VRChat/VRChat
+Change SOUND to play a sound using paplay
 
 License
 MIT
