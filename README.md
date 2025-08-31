@@ -24,6 +24,7 @@ The popup will still appear when you join the world, so please be patient.
 
 ---
 ## depency
+flatpak version steam recommend
 python 3.13 or higher
 
 ---
