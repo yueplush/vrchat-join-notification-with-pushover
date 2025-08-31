@@ -3,7 +3,7 @@
 A simple log-watcher that notifies you when someone joins your current VRChat world.  
 No unofficial API calls – it only reads your **local VRChat logs** (safe and ToS-friendly).
 
-![screenshot](https://raw.githubusercontent.com/yueplush/vrchat-join-notification/refs/heads/main/notify.png)  
+![screenshot](https://github.com/yueplush/vrchat-join-notification-with-pushover/blob/main/notify.png?raw=true)  
 *(example notification on GNOME desktop)*
 
 ---
