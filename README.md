@@ -1,4 +1,4 @@
-## this is proprietary service related code, OSS version here
+## ※this is proprietary service related code, OSS version here
 https://github.com/yueplush/vrchat-join-notification
 
 # VRChat Join Notification (Linux)
