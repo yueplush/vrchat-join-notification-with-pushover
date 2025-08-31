@@ -99,6 +99,10 @@ SOUND = "/usr/share/sounds/freedesktop/stereo/message.oga"  # Optional
 Change ICON to use a custom PNG in notifications
 Change SOUND to play a sound using paplay
 
+# how to pause notification
+If you want to pause notifications, try temporarily disabling the Pushover app notification settings on your device, 
+or try pausing them in the settings on pushover.net.
+
 License
 MIT
 
