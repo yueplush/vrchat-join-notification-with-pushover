@@ -30,8 +30,8 @@ python 3.13 or higher
 # Install
 
 ```bash
-git clone https://github.com/yueplush/vrchat-join-notification.git
-cd vrchat-join-notification
+git clone https://github.com/yueplush/vrchat-join-notification-with-pushover.git
+cd vrchat-join-notification-with-pushover
 chmod +x install.sh
 bash ./install.sh
 ```
@@ -44,7 +44,7 @@ Register and start the systemd user service vrc-join-notify.service
 # uninstall
 
 ```bash
-cd vrchat-join-notification
+cd vrchat-join-notification-with-pushover
 chmod +x uninsatll.sh
 bash ./uninstall.sh
 ```
