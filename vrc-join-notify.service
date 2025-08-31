@@ -4,10 +4,11 @@ After=default.target
 
 [Service]
 Type=simple
-ExecStart=%h/.local/bin/vrc_join_notify.py
+Environment=PUSHOVER_TOKEN=XXXXX   # Application/API Token
+Environment=PUSHOVER_USER=XXXXX   # User Key
+ExecStart=%h/.local/bin/vrc_join_notify.py 
 Restart=always
 RestartSec=2
 
 [Install]
 WantedBy=default.target
-
